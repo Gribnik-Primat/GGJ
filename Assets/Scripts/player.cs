@@ -19,7 +19,21 @@ public class player : MonoBehaviour
     public Sprite litso;
     public Sprite pravo;
     public Sprite levo;
+    public Sprite ass1;
+    public Sprite litso1;
+    public Sprite pravo1;
+    public Sprite levo1;
+    public Sprite ass2;
+    public Sprite litso2;
+    public Sprite pravo2;
+    public Sprite levo2;
+    public Sprite ass3;
+    public Sprite litso3;
+    public Sprite pravo3;
+    public Sprite levo3;
+
     public Slider sldr;
+
     public Text tStrength;
     public Text tDexterity;
     public Text tCute;
@@ -37,6 +51,7 @@ public class player : MonoBehaviour
     public Sprite hedhehog;
     public Sprite human;
 
+
     private SceneManager sc;
     AsyncOperation asyncOperation;
 
@@ -45,7 +60,22 @@ public class player : MonoBehaviour
     {
         asyncOperation = SceneManager.LoadSceneAsync("EndSceneBad");
         asyncOperation.allowSceneActivation = false;
-        this.GetComponent<SpriteRenderer>().sprite = litso;
+        switch (PlayerPrefs.GetInt("id"))
+        {
+            case 0:
+                this.GetComponent<SpriteRenderer>().sprite = litso;
+                break;
+            case 1:
+                this.GetComponent<SpriteRenderer>().sprite = litso1;
+                break;
+            case 2:
+                this.GetComponent<SpriteRenderer>().sprite = litso2;
+                break;
+            case 3:
+                this.GetComponent<SpriteRenderer>().sprite = litso3;
+                break;
+        }
+        
         eventMessage.SetActive(false);
         battle.SetActive(false);
         cur_tile_x = start_tile_x;
@@ -70,7 +100,21 @@ public class player : MonoBehaviour
             {
                 if (cur_tile_y < 20 && map.GetComponent<map_generator>().map_id[cur_tile_x, cur_tile_y + 1] != 1)
                 {
-                    this.GetComponent<SpriteRenderer>().sprite = ass;
+                    switch (PlayerPrefs.GetInt("id"))
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = ass;
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = ass1;
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = ass2;
+                            break;
+                        case 3:
+                            this.GetComponent<SpriteRenderer>().sprite = ass3;
+                            break;
+                    }
                     cur_tile_y++;
                     flag_show_event = false;
                     flag_hp_once = false;
@@ -81,7 +125,21 @@ public class player : MonoBehaviour
             {
                 if (cur_tile_x > 0 && map.GetComponent<map_generator>().map_id[cur_tile_x - 1, cur_tile_y] != 1)
                 {
-                    this.GetComponent<SpriteRenderer>().sprite = levo;
+                    switch (PlayerPrefs.GetInt("id"))
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = levo;
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = levo1;
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = levo2;
+                            break;
+                        case 3:
+                            this.GetComponent<SpriteRenderer>().sprite = levo3;
+                            break;
+                    }
                     cur_tile_x--;
                     flag_show_event = false;
                     flag_hp_once = false;
@@ -92,7 +150,21 @@ public class player : MonoBehaviour
             {
                 if (cur_tile_y > 0 && map.GetComponent<map_generator>().map_id[cur_tile_x, cur_tile_y - 1] != 1)
                 {
-                    this.GetComponent<SpriteRenderer>().sprite = litso;
+                    switch (PlayerPrefs.GetInt("id"))
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = litso;
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = litso1;
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = litso2;
+                            break;
+                        case 3:
+                            this.GetComponent<SpriteRenderer>().sprite = litso3;
+                            break;
+                    }
                     cur_tile_y--;
                     flag_show_event = false;
                     flag_hp_once = false;
@@ -103,7 +175,21 @@ public class player : MonoBehaviour
             {
                 if (cur_tile_x < 20 && map.GetComponent<map_generator>().map_id[cur_tile_x + 1, cur_tile_y] != 1)
                 {
-                    this.GetComponent<SpriteRenderer>().sprite = pravo;
+                    switch (PlayerPrefs.GetInt("id"))
+                    {
+                        case 0:
+                            this.GetComponent<SpriteRenderer>().sprite = pravo;
+                            break;
+                        case 1:
+                            this.GetComponent<SpriteRenderer>().sprite = pravo1;
+                            break;
+                        case 2:
+                            this.GetComponent<SpriteRenderer>().sprite = pravo2;
+                            break;
+                        case 3:
+                            this.GetComponent<SpriteRenderer>().sprite = pravo3;
+                            break;
+                    }
                     cur_tile_x++;
                     flag_show_event = false;
                     flag_hp_once = false;

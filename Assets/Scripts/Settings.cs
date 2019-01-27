@@ -20,6 +20,6 @@ public class Settings : MonoBehaviour
     }
     public void ExitGame()
     {
-        asyncOperation.allowSceneActivation = true;
+        SceneManager.LoadScene("Menu", LoadSceneMode.Additive);
     }
 }

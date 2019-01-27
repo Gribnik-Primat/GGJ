@@ -52,7 +52,7 @@ public class MenuManager : MonoBehaviour
 
     public void LaunchGame()
     {
-        asyncOperation.allowSceneActivation = true;
+        SceneManager.LoadScene("ChoiceScene", LoadSceneMode.Additive);
     }
     void Update()
     {

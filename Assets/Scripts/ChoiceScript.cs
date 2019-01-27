@@ -42,6 +42,8 @@ public class ChoiceScript : MonoBehaviour
         cute = 2;
         strength = 2;
         dexterity = 2;
+        PlayerPrefs.SetInt("id", 0);
+        PlayerPrefs.Save();
     }
 
     public void clickJack()
@@ -50,6 +52,8 @@ public class ChoiceScript : MonoBehaviour
         cute = 1;
         strength = 4;
         dexterity = 1;
+        PlayerPrefs.SetInt("id", 2);
+        PlayerPrefs.Save();
     }
 
     public void clickMia()
@@ -58,6 +62,8 @@ public class ChoiceScript : MonoBehaviour
         cute = 4;
         strength = 1;
         dexterity = 1;
+        PlayerPrefs.SetInt("id", 1);
+        PlayerPrefs.Save();
     }
 
     public void clickSandra()
@@ -66,5 +72,7 @@ public class ChoiceScript : MonoBehaviour
         dexterity = 4;
         strength = 1;
         cute = 1;
+        PlayerPrefs.SetInt("id", 3);
+        PlayerPrefs.Save();
     }
 }
